@@ -87,6 +87,7 @@ install_requires = [
     'WTForms-Alchemy>=0.15.0',
     'invenio-accounts>=1.0.0a13',
     'six>=1.7.2',
+    'oauthlib>=1.1.2,<2.0.0',  # FIXME compatiblity issue with 2.x version
 ]
 
 packages = find_packages()
