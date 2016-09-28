@@ -139,5 +139,6 @@ def test_access_login_required(resource_fixture):
         assert 'Set-Cookie' in res.headers
         # try to access to login_required zone (and pass)
         res = client.post(app.url_for_test3resource)
+        print(res.__dict__)
         assert 200 == res.status_code
         assert 'Set-Cookie' not in res.headers
