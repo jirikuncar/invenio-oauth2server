@@ -360,6 +360,11 @@ class Token(db.Model):
     is_internal = db.Column(db.Boolean, default=False)
     """Determines if token is an internally generated token."""
 
+    def delete(self):
+        """Delete token by revoke token handler."""
+        db.session.delete(self)
+        db.session.commit()
+
     @property
     def scopes(self):
         """Return all scopes."""

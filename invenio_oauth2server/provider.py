@@ -108,3 +108,9 @@ def save_token(token, request, *args, **kwargs):
     db.session.add(tok)
     db.session.commit()
     return tok
+
+
+@oauth2.clientgetter
+def get_client(client_id, *args, **kwargs):
+    """Get client for token revocation."""
+    return Client.query.get_or_none(client_id)

@@ -131,6 +131,13 @@ def access_token():
     return None
 
 
+@blueprint.route('/revoke', methods=['POST'])
+@oauth2.revoke_handler
+def revoke_token():
+    """Revoke an access or refresh token."""
+    return {}
+
+
 @blueprint.route('/errors')
 def errors():
     """Error view in case of invalid oauth requests."""
